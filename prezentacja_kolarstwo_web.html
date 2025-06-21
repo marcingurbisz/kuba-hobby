@@ -202,6 +202,52 @@
         .conclusion-slide .highlight-box h3 {
             color: white;
         }
+
+        /* Style dla video */
+        .video-container {
+            margin: 30px 0;
+            text-align: center;
+            border-radius: 15px;
+            overflow: visible;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #f8f9fa;
+            padding: 15px;
+        }
+
+        .video-container video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+            background: #000;
+        }
+
+        .trainer-photo {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .trainer-photo img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border: 5px solid #3498db;
+        }
+
+        .promo-slide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .promo-slide h2 {
+            color: white;  
+            border-bottom-color: white;
+        }
     </style>
 </head>
 <body>
@@ -261,6 +307,14 @@
                 <li>Siłę w nogach i całym ciele</li>
                 <li>Umiejętność czytania terenu</li>
             </ul>
+
+            <div class="video-container">
+                <video controls>
+                    <source src="pumptrack_h264.mp4" type="video/mp4">
+                    Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                </video>
+                <p style="margin-top: 10px; font-style: italic;">Zobacz jak trenuję na pumptrack!</p>
+            </div>
         </div>
 
         <!-- Slajd 5: Stoliki -->
@@ -286,6 +340,14 @@
                 <li>Można stopniowo zwiększać wysokość skoków</li>
                 <li>Budują pewność siebie</li>
             </ul>
+
+            <div class="video-container">
+                <video controls>
+                    <source src="stoliki_h264.mp4" type="video/mp4">
+                    Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                </video>
+                <p style="margin-top: 10px; font-style: italic;">Moja nauka skoków na stolikach!</p>
+            </div>
         </div>
 
         <!-- Slajd 6: B-line -->
@@ -311,6 +373,14 @@
                 <li>Uczy bezpiecznej jazdy downhill</li>
                 <li>Buduje doświadczenie i pewność siebie</li>
             </ul>
+
+            <div class="video-container">
+                <video controls>
+                    <source src="b-line_h264.mp4" type="video/mp4">
+                    Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                </video>
+                <p style="margin-top: 10px; font-style: italic;">Moja jazda na trasie B-line!</p>
+            </div>
         </div>
 
         <!-- Slajd 7: Strój -->
@@ -337,6 +407,10 @@
         <div class="slide">
             <h2>🏆 Mój trener - Bartek</h2>
             
+            <div class="trainer-photo">
+                <img src="trener_bartek.jpg" alt="Trener Bartek">
+            </div>
+            
             <div class="highlight-box" style="background: linear-gradient(45deg, #a8edea, #fed6e3);">
                 <h3>🌟 Dlaczego Bartek jest świetnym trenerem?</h3>
                 <ul style="margin: 15px 0;">
@@ -348,6 +422,24 @@
                 </ul>
             </div>
         
+        </div>
+
+        <!-- Slajd z filmem promocyjnym -->
+        <div class="slide promo-slide">
+            <h2>🎬 Film promocyjny o kolarstwie grawitacyjnym</h2>
+            
+            <p style="font-size: 1.3em; margin: 30px 0;">Zobacz jak wspaniałe jest to hobby!</p>
+            
+            <div class="video-container">
+                <video controls style="max-width: 800px;">
+                    <source src="promo-film_na_koniec.mp4" type="video/mp4">
+                    Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                </video>
+            </div>
+            
+            <p style="font-size: 1.1em; margin-top: 30px; opacity: 0.9;">
+                To może być Twoja przygoda! 🚵‍♂️✨
+            </p>
         </div>
 
         <!-- Slajd 10: Zakończenie -->
@@ -374,7 +466,7 @@
         <div class="navigation">
             <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">⬅️ Poprzedni</button>
             <span class="slide-counter">
-                <span id="currentSlide">1</span> / <span id="totalSlides">10</span>
+                <span id="currentSlide">1</span> / <span id="totalSlides">11</span>
             </span>
             <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Następny ➡️</button>
         </div>
@@ -388,6 +480,13 @@
         document.getElementById('totalSlides').textContent = totalSlides;
 
         function showSlide(index) {
+            // Zatrzymaj wszystkie filmy przed zmianą slajdu
+            const allVideos = document.querySelectorAll('video');
+            allVideos.forEach(video => {
+                video.pause();
+                video.currentTime = 0;
+            });
+            
             slides.forEach(slide => slide.classList.remove('active'));
             slides[index].classList.add('active');
             
