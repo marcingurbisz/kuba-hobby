@@ -11,16 +11,9 @@ Prezentacja zawiera:
 - Filmiki demonstracyjne z treningów
 - Informacje o trenerze
 
-## 🎬 Multimedia
-
-Prezentacja zawiera:
-- **Filmiki treningowe**: pumptrack, stoliki, b-line (skonwertowane do H.264 dla kompatybilności z przeglądarkami)
-- **Zdjęcie trenera**: Bartek
-- **Film promocyjny**: inspirujące wideo na zakończenie
-
 ## 🌐 Zobacz prezentację online
 
-Prezentacja jest dostępna pod adresem: [Link zostanie dodany po publikacji]
+Prezentacja jest dostępna pod adresem: https://marcingurbisz.github.io/kuba-hobby/
 
 ## 🛠️ Technologie
 
@@ -33,7 +26,6 @@ Prezentacja jest dostępna pod adresem: [Link zostanie dodany po publikacji]
 
 - **Przyciski**: Poprzedni/Następny
 - **Klawiatura**: Strzałki lewo/prawo
-- **Auto-stop**: Filmiki automatycznie zatrzymują się przy zmianie slajdu
 
 ## 📱 Responsywność
 
